@@ -9,6 +9,15 @@ const server = http.createServer((req,res)=>{
    res.statuscode = 404;
    res.statusmessage ="BAD";
    res.writeHead(202,"Good",{"Content-Type":"text/html"});
+   
+   if(req.url ==='/'){
+    res.end("<h1>Hello from Node.js Home</h1>");
+    }
+    else if(req.url ==='/About'){
+        res.end("<h1> Node.js About</h1>");
+    }
+
+
 
 });
 
