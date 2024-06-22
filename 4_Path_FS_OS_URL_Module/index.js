@@ -8,7 +8,7 @@ console.log(path.parse("C:\\Users\\index.js"));
 console.log(path.parse("C:\\Users\\index.js").base);
 
 import * as fs from "fs/promises";
-/*try{
+try{
     await fs.mkdir('C:\\Users\\gadres\\Documents\\nodejs\\Expressjs\\Code',{recursive:true});
     console.log('folder created');
 }
@@ -55,16 +55,36 @@ try{
 }
 catch(error){
  console.log(error);
-}*/
+}
 try{
     const info = fs.stat('info.txt');
-    console.log(info);
-    console.log(info.isDirectory());
-    console.log(info.isFile());
+    //console.log(info);
+    //console.log(info.isDirectory());
+    //console.log(info.isFile());
 }
 catch(error){
  console.log(error);
 }
+import * as fscall from "fs";
+fscall.mkdir("C:\\Users\\gadres\\Documents\\nodejs\\Nextjs",(error)=>{
+if(error){
+    throw error;
+}
+console.log("Directory created");
+})
+import * as fssync from "fs";
+fssync.mkdirSync("C:\\Users\\gadres\\Documents\\nodejs\\Typescript",{recursive:true});
+fssync.rmdirSync("C:\\Users\\gadres\\Documents\\nodejs\\Typescript");
+
+import os from 'os';
+console.log(os.platform());
+console.log(os.arch());
+console.log(os.cpus());
+console.log(os.hostname());
+console.log(os.networkInterfaces());
+console.log(os.freemem());
+console.log(os.totalmem());
+
 
 import {URL} from "url";
 const myURL = new URL("https://www.youtube.com/watch?v=EsUL2bfKKLc&t=1s");

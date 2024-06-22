@@ -98,6 +98,42 @@ try{
 catch(error){
  console.log(error);
 }
+2. Callback apis
+When a Callback API is called, the responder 
+must handle the request and provide a response that 
+conforms to what the caller expects.
+for this import fs from just fs
+import * as fscall from "fs";
+No need to write try and catch block you can specify 
+a callback function if error occurs
+import * as fscall from "fs";
+fscall.mkdir("C:\\Users\\gadres\\Documents\\nodejs\\Nextjs",(error)=>{
+if(error){
+    throw error;
+}
+console.log("Directory created");
+})
+3.sync apis
+A synchronous API is an interface that processes requests sequentially, 
+requiring each operation to be completed before the next one can begin.
+import * as fssync from "fs";
+fssync.mkdirSync("C:\\Users\\gadres\\Documents\\nodejs\\Typescript",{recursive:true});
+TO remove directory:
+fssync.rmdirSync("C:\\Users\\gadres\\Documents\\nodejs\\Typescript");
+
+
+Os module -> inbuilt module
+gives the metadata details about your Os
+import os from 'os';
+some of the methods
+console.log(os.platform());
+console.log(os.arch());
+console.log(os.cpus());
+console.log(os.hostname());
+console.log(os.networkInterfaces());
+console.log(os.freemem());
+console.log(os.totalmem());
+
 
 URL - module - inbuilt
 Uniform resource locator
